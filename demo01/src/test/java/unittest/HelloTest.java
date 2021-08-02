@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Override by method
 class UserDBWithSuccess extends UserDB {
     @Override
     public String getNameById(int id) {
