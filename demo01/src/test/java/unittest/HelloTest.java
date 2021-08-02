@@ -11,6 +11,12 @@ class HelloTest {
     @DisplayName("ทำการทดสอบกับ database (I = Isolate/Independent)")
     public void case02() {
         Hello hello = new Hello();
+        hello.userDB = new UserDB(){
+            @Override
+            public String getNameById(int id) {
+                return "somkiat";
+            }
+        };
         String name = hello.workWithDb(1);
         assertEquals("somkiat", name);
     }

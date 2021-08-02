@@ -5,9 +5,10 @@ public class Hello {
         return "Hello, " + name;
     }
 
+    UserDB userDB;
+
     public String workWithDb(int id) {
-        // Tight coupling
-        UserDB userDB = new UserDB();
+        // Tight coupling => Loose coupling
         return userDB.getNameById(id);
     }
 }
