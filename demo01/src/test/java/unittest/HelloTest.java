@@ -22,6 +22,22 @@ class HelloTest {
     }
 
     @Test
+    @DisplayName("เกิด exception เมื่อค้นหาผู้ใช้งาน id=2 ไม่เจอ")
+    public void case03() {
+        Hello hello = new Hello();
+        hello.userDB = new UserDB(){
+            @Override
+            public String getNameById(int id){
+                throw new UserNotFoundException("Id=" + id + " not found");
+            }
+        };
+        // Junit 5 + Exception
+        Exception exception = assertThrows(UserNotFoundException.class, () ->
+                hello.workWithDb(2));
+        assertEquals("Id=2 not found", exception.getMessage());
+    }
+
+    @Test
     @DisplayName("นี่คือ case แรกของการเขียนนะ")
     public void case01() {
         // Arrange == Given == Pre condition
