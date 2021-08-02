@@ -5,18 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+class UserDBWithSuccess extends UserDB {
+    @Override
+    public String getNameById(int id) {
+        return "somkiat";
+    }
+}
+
 class HelloTest {
 
     @Test
     @DisplayName("ทำการทดสอบกับ database (I = Isolate/Independent)")
     public void case02() {
         Hello hello = new Hello();
-        hello.userDB = new UserDB(){
-            @Override
-            public String getNameById(int id) {
-                return "somkiat";
-            }
-        };
+        hello.userDB = new UserDBWithSuccess();
         String name = hello.workWithDb(1);
         assertEquals("somkiat", name);
     }
