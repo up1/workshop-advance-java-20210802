@@ -8,6 +8,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class HelloTest {
 
     @Test
+    @DisplayName("ทำการทดสอบกับ database (I = Isolate/Independent)")
+    public void case02() {
+        Hello hello = new Hello();
+        String name = hello.workWithDb(1);
+        assertEquals("somkiat", name);
+    }
+
+    @Test
     @DisplayName("นี่คือ case แรกของการเขียนนะ")
     public void case01() {
         // Arrange == Given == Pre condition
