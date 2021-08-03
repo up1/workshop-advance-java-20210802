@@ -1,5 +1,6 @@
 package unittest;
 
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +19,11 @@ class HelloTest {
     @Test
     @DisplayName("ทำการทดสอบกับ database (I = Isolate/Independent)")
     public void case02() {
-        Hello hello = new Hello();
-        hello.userDB = new UserDBWithSuccess();
-        String name = hello.workWithDb(1);
+        // Dependency Injection (DI)
+        UserDB  userDB = new UserDBWithSuccess();
+        Hello hello = new Hello(userDB); // 1. Constructor Injection
+        hello.userDB = new UserDBWithSuccess();  // 2. Field/property/setter Injection
+        String name = hello.workWithDb(userDB, 1); // Method Injection
         assertEquals("somkiat", name);
     }
 
