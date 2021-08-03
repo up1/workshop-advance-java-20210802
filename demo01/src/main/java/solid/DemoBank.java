@@ -3,6 +3,8 @@ package solid;
 /**
  * 1. Transfer money in Thailand only
  * 2. Transfer money (International)
+ *   - Inheritance
+ *   - Interface
  */
 
 public class DemoBank {
