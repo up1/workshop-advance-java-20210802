@@ -17,7 +17,7 @@ public class GenerateIdServiceTest {
      */
 
     @Test
-    @DisplayName("ID = XYZ7")
+    @DisplayName("Demo Stub Random :: ID = XYZ7")
     public void case01() {
         GenerateIdService service = new GenerateIdService();
         service.setRandom(new StubRandom(7));
@@ -26,7 +26,7 @@ public class GenerateIdServiceTest {
     }
 
     @Test
-    @DisplayName("Called nextInt()")
+    @DisplayName("Demo spy random :: Called nextInt()")
     public void case02() {
         GenerateIdService service = new GenerateIdService();
         SpyRandom spyRandom = new SpyRandom();
