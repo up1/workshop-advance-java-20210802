@@ -14,7 +14,7 @@ public class GenerateIdServiceTest {
     private GenerateIdService generateIdService;
 
     @Test
-    @DisplayName("เริ่มต้นทดสอบกับ spting boot test")
+    @DisplayName("เริ่มต้นทดสอบกับ spring boot test")
     public void case01(){
         String id = generateIdService.get();
         assertEquals("XYZ7", id);
