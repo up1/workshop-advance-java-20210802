@@ -1,5 +1,6 @@
 package com.example.workshopdip;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -7,11 +8,8 @@ import java.util.Random;
 @Component
 public class GenerateIdService {
 
-    private Random random = new Random();
-
-    public void setRandom(Random random) {
-        this.random = random;
-    }
+    @Autowired
+    private Random random;
 
     public String get() {
         int number = random.nextInt(10);

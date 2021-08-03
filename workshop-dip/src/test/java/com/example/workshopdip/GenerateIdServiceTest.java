@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +15,9 @@ public class GenerateIdServiceTest {
 
     @Autowired
     private GenerateIdService generateIdService;
+
+//    @MockBean
+//    private Random random;
 
     @Test
     @DisplayName("เริ่มต้นทดสอบกับ spring boot test")
