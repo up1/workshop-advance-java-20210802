@@ -10,6 +10,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -25,7 +26,7 @@ public class GenerateIdServiceTest {
     @DisplayName("เริ่มต้นทดสอบกับ spring boot test")
     public void case01(){
         // Arrange
-        when(random.nextInt(10)).thenReturn(7);
+        when(random.nextInt(anyInt())).thenReturn(7); // Stub
         // Act
         String id = generateIdService.get();
         // Assert
