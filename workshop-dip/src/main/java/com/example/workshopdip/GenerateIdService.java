@@ -11,6 +11,10 @@ public class GenerateIdService {
     @Autowired
     private Random random;
 
+    public void setRandom(Random random) {
+        this.random = random;
+    }
+
     public String get() {
         int number = random.nextInt(10);
         String id = "XYZ" + number;
